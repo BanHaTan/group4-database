@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: read
-  pages: writegugit
+  pages: write      # Đã sửa lỗi typo writegugit
   id-token: write
 
 concurrency:
