@@ -3,7 +3,7 @@ import axios from 'axios';
 // Khi build production → dùng URL Render backend
 // Khi dev local → dùng proxy (vite.config.js xử lý)
 const BASE_URL = import.meta.env.PROD
-  ? 'https://YOUR-RENDER-APP-NAME.onrender.com/api'  // ← Sẽ thay sau khi deploy Render
+  ? 'https://pm-system-api.onrender.com/api'  // ← URL Render thật
   : '/api';
 
 const api = axios.create({
