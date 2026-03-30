@@ -1,33 +1,34 @@
-const express = require('express');
-const cors = require('cors');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
-require('dotenv').config();
-
-const pool = require('./db');
-const app = express();
-
 // ======================== MIDDLEWARE ========================
-// CORS
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
-  process.env.FRONTEND_URL, // Set trên Render
-].filter(Boolean);
+  'https://banhatan.github.io' // Thêm trực tiếp để chắc chắn
+];
+
+// Nếu có biến môi trường FRONTEND_URL thì thêm vào danh sách
+if (process.env.FRONTEND_URL) {
+  allowedOrigins.push(process.env.FRONTEND_URL.replace(/\/$/, ""));
+}
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (mobile apps, curl, etc.)
+    // Cho phép các request không có origin (như Postman/Mobile)
     if (!origin) return callback(null, true);
-    if (allowedOrigins.some(allowed => origin.startsWith(allowed))) {
-      return callback(null, true);
+    
+    // Kiểm tra xem origin có trong danh sách cho phép không
+    const isAllowed = allowedOrigins.includes(origin.replace(/\/$/, ""));
+    
+    if (isAllowed) {
+      callback(null, true);
+    } else {
+      // Trong giai đoạn dev, nếu không khớp vẫn cho qua nhưng log lỗi
+      console.error(`CORS Blocked for: ${origin}`);
+      callback(null, true); 
     }
-    return callback(null, true); // Cho phép tất cả trong giai đoạn dev
   },
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
