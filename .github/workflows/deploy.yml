@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: read
-  pages: write
+  pages: writegugit
   id-token: write
 
 concurrency:
