@@ -17,7 +17,7 @@ export default function Login() {
     try {
       const { data } = await api.post('/auth/login', { email, password });
       login(data.token, data.user);
-      navigate('/dashboard');
+      navigate('/projects');
     } catch (err) {
       setError(err.response?.data?.error || 'Đăng nhập thất bại');
     } finally { setLoading(false); }

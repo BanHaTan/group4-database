@@ -18,7 +18,7 @@ export default function Register() {
     try {
       const { data } = await api.post('/auth/register', { username, email, password });
       login(data.token, data.user);
-      navigate('/dashboard');
+      navigate('/projects');
     } catch (err) {
       setError(err.response?.data?.error || 'Đăng ký thất bại');
     } finally { setLoading(false); }

@@ -9,8 +9,16 @@ export default defineConfig(({ mode }) => ({
   server: {
     port: 3000,
     proxy: {
-      '/api': 'http://localhost:5000',
-      '/uploads': 'http://localhost:5000'
+      //'/api': 'http://localhost:5000',
+      //'/uploads': 'http://localhost:5000'
+      '/api': {
+          target: 'https://group4-database.onrender.com',
+          changeOrigin: true
+      },
+      '/uploads': {
+          target: 'https://group4-database.onrender.com',
+          changeOrigin: true
+      }
     }
   },
   build: {

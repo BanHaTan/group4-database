@@ -3,7 +3,6 @@ import { useState, useEffect, createContext, useContext } from 'react';
 import api from './api';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import TaskBoard from './pages/TaskBoard';
@@ -37,9 +36,7 @@ function Sidebar() {
         <p>Quản Lý Dự Án Phần Mềm</p>
       </div>
       <nav className="sidebar-nav">
-        <Link to="/dashboard" className={isActive('/dashboard') ? 'active' : ''}>
-          📊 Dashboard
-        </Link>
+      
         <Link to="/projects" className={isActive('/projects') ? 'active' : ''}>
           📁 Dự Án
         </Link>
@@ -64,12 +61,11 @@ function ProtectedLayout() {
       <Sidebar />
       <div className="main-content">
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/projects/:id/board" element={<TaskBoard />} />
           <Route path="/notifications" element={<Notifications />} />
-          <Route path="*" element={<Navigate to="/dashboard" />} />
+          <Route path="*" element={<Navigate to="/projects" />} />
         </Routes>
       </div>
     </div>
@@ -111,8 +107,8 @@ export default function App() {
     <AuthContext.Provider value={{ user, login, logout }}>
       <BrowserRouter basename={import.meta.env.PROD ? '/group4-database' : '/'}>
         <Routes>
-          <Route path="/login" element={user ? <Navigate to="/dashboard" /> : <Login />} />
-          <Route path="/register" element={user ? <Navigate to="/dashboard" /> : <Register />} />
+          <Route path="/login" element={user ? <Navigate to="/projects" /> : <Login />} />
+          <Route path="/register" element={user ? <Navigate to="/projects" /> : <Register />} />
           <Route path="/*" element={<ProtectedLayout />} />
         </Routes>
       </BrowserRouter>
