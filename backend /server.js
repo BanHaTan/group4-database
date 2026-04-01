@@ -115,7 +115,7 @@ app.post('/api/auth/register', async (req, res) => {
     const { username, email, password } = req.body;
     if (!username || !email || !password) return res.status(400).json({ error: 'Thiếu thông tin' });
     
-    // Lưu password thẳng, không hash
+    // Lưu password thẳng, không hash password
     const [result] = await pool.query(
       'INSERT INTO `USER` (username, email, password) VALUES (?, ?, ?)',
       [username, email, password]
