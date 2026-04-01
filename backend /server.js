@@ -2,7 +2,7 @@
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
-  'https://banhatan.github.io' // Thêm trực tiếp để chắc chắn honw
+  'https://banhatan.github.io' // Thêm trực tiếp để chắc chắn
 ];
 
 // Nếu có biến môi trường FRONTEND_URL thì thêm vào danh sách
@@ -115,10 +115,10 @@ app.post('/api/auth/register', async (req, res) => {
     const { username, email, password } = req.body;
     if (!username || !email || !password) return res.status(400).json({ error: 'Thiếu thông tin' });
     
-    const hashed = await bcrypt.hash(password, 10);
+    // Lưu password thẳng, không hash
     const [result] = await pool.query(
       'INSERT INTO `USER` (username, email, password) VALUES (?, ?, ?)',
-      [username, email, hashed]
+      [username, email, password]
     );
     const token = jwt.sign(
       { user_id: result.insertId, username, email },
@@ -142,8 +142,10 @@ app.post('/api/auth/login', async (req, res) => {
     if (rows.length === 0) return res.status(401).json({ error: 'Email hoặc mật khẩu không đúng' });
 
     const user = rows[0];
-    const valid = await bcrypt.compare(password, user.password);
-    if (!valid) return res.status(401).json({ error: 'Email hoặc mật khẩu không đúng' });
+    // So sánh password trực tiếp (plain text)
+    if (password !== user.password) {
+      return res.status(401).json({ error: 'Email hoặc mật khẩu không đúng' });
+    }
 
     const token = jwt.sign(
       { user_id: user.user_id, username: user.username, email: user.email },
