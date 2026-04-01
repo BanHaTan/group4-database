@@ -2,7 +2,7 @@
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
-  'https://banhatan.github.io' // Thêm trực tiếp để chắc chắn
+  'https://banhatan.github.io' // Thêm trực tiếp để chắc chắn honw
 ];
 
 // Nếu có biến môi trường FRONTEND_URL thì thêm vào danh sách
