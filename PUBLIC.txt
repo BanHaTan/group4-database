@@ -1,0 +1,17 @@
+INSERT INTO PROJECT (project_name, description, start_date, end_date)
+VALUES 
+('Renovation of a School Project 001', NULL, '2024-07-21', '2024-08-08'),
+('Innovation of a Classroom Project 002', NULL, '2024-06-04', '2025-07-12'),
+('Construction of a Hospital Wing Project 003', NULL, '2024-07-20', '2024-08-22'),
+('Road Expansion Project 004', NULL, '2024-04-25', '2024-05-06'),
+('Bridge Maintenance Project 005', NULL, '2024-06-30', '2025-07-31'),
+('Office Building Renovation Project 006', NULL, '2024-08-09', '2024-09-11'),
+('Apartment Complex Development Project 007', NULL, '2024-08-06', '2024-11-17'),
+('Commercial Center Construction Project 008', NULL, '2024-04-17', '2024-09-13'),
+('Highway Reconstruction Project 009', NULL, '2024-04-27', '2025-04-28'),
+('Airport Expansion Project 010', NULL, '2024-02-14', '2024-06-15'),
+('Shopping Mall Renovation Project 011', NULL, '2024-05-08', '2024-07-28'),
+('University Dormitory Construction Project 012', NULL, '2024-01-27', '2024-02-29'),
+('Sports Stadium Upgrade Project 013', NULL, '2024-02-09', '2024-08-24'),
+('Public Library Renovation Project 014', NULL, '2024-07-30', '2024-12-20'),
+('Building a Park Project 015', NULL, '2024-03-17', '2024-04-19'),

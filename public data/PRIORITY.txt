@@ -1,5 +1,0 @@
-priority_id | priority_name
---------------------------------
-1 | High
-2 | Medium
-3 | Low
