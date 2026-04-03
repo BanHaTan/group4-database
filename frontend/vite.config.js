@@ -4,7 +4,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ mode }) => ({
   plugins: [react()],
   // GitHub Pages: repo name làm base path
-  // Thay 'project-management' bằng tên repo GitHub của bạn
   base: mode === 'production' ? '/group4-database/' : '/',
   server: {
     port: 3000,
