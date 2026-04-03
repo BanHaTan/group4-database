@@ -1,0 +1,7 @@
+state_id | state_name
+--------------------------
+1 | Backlog
+2 | Todo
+3 | In Progress
+4 | Review
+5 | Done

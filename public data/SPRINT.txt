@@ -1,0 +1,14 @@
+sprint_id | sprint_name | start_date | end_date
+--------------------------------------------------------
+3 | Sprint 1 - UI Design | 2026-01-31T17:00:00.000Z | 2026-02-13T17:00:00.000Z
+4 | Sprint 2 - Product & Cart Module | 2026-02-14T17:00:00.000Z | 2026-02-27T17:00:00.000Z
+5 | Sprint 1 - Database & Authentication | 2026-01-14T17:00:00.000Z | 2026-01-28T17:00:00.000Z
+6 | Sprint 2 - Borrowing System | 2026-01-29T17:00:00.000Z | 2026-02-12T17:00:00.000Z
+7 | Sprint 1 - Student Dashboard | 2026-02-28T17:00:00.000Z | 2026-03-13T17:00:00.000Z
+8 | Sprint 1 - Inventory Core | 2026-02-09T17:00:00.000Z | 2026-02-23T17:00:00.000Z
+9 | Sprint 1 - Reservation Flow | 2026-01-19T17:00:00.000Z | 2026-02-02T17:00:00.000Z
+10 | Sprint 1 - Workout Tracker | 2026-02-14T17:00:00.000Z | 2026-02-28T17:00:00.000Z
+11 | Sprint 1 - Course Management | 2026-01-09T17:00:00.000Z | 2026-01-23T17:00:00.000Z
+12 | Sprint 1 - Room Booking Module | 2026-03-04T17:00:00.000Z | 2026-03-18T17:00:00.000Z
+15 | sprint1 | 2026-02-03T17:00:00.000Z | 2026-10-03T17:00:00.000Z
+16 | sprint20 | 2026-01-04T17:00:00.000Z | 2026-10-04T17:00:00.000Z
